@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 :root{
     --primary-color:#3685fb;
-    --primary-color-dark:#2f73d9;
+    --primary-color-dark:#1f003a;
     --secondary-color:#fafcff;
-    --text-dark:#0d213f;
+    --text-dark:#000101;
     --text-light:#767268;
     --extra-light:#ffffff;
-    --max-width:1200px;
+    --max-width:1000px;
 }
 *{
     padding:0;
@@ -15,9 +15,12 @@
     font-size: 14px;
 
 }
-.section_container{max-width:var(--max-width);
+
+
+.section_container{
+     max-width:var(--max-width);
 margin:auto;
-padding:5remm 1rem;}
+padding:5rem 1rem;}
 
 .section_header{
 display:flex;
@@ -111,25 +114,31 @@ cursor: pointer;
     color:var(--primary-color);
 }
 
-.nav_links{
+.nav_link{
     list-style:none;
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.link a{
-    padding: 0 1rem;
+.nav_link .link a{
+    display: inline-block;
+    padding: 0.5rem 1rem;
     color:var(--text-dark);
-    transition: 0.3s;
+    transition: 0.2s;
+    position: relative;
+    z-index: 10;
 }
 
-.link a:hover{
-    color: var(--primary-color);
+.nav_link .link a:hover{
+    color: #00e7d3ed;
+    
+   
 }
 
 header{
     background-color: var(--secondary-color);
+    margin-bottom: 40px;
 }
 
 .header_container{
@@ -270,6 +279,8 @@ gap:1rem;}
     position: relative;
     isolation: isolate;
     cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     
 }
 
@@ -279,6 +290,7 @@ gap:1rem;}
     height:300px;
     max-width: 250px;
     object-fit: cover;
+    transition: filter 0.3s ease,transform 0.3s ease;
     
 }
 
@@ -300,7 +312,24 @@ gap:1rem;}
 
 .destination_card:hover .destination_details{
     bottom: 1rem;
+    background: rgba(0, 0, 0, 0.8);
 }
+.destination_details p {
+    margin: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.destination_card:hover .destination_details p {
+    transform: translateY(-5px); /* Move text slightly up */
+    opacity: 1;
+}
+.destination_card:hover img {
+    filter:blur(3px) brightness(0.75);
+    transform: scale(1.05);
+}
+
+
+
 .destination_title{
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
@@ -514,7 +543,5 @@ gap:1rem;}
     text-align: center;
     font-size: 0.8rem;
     color:var(--secondary-color);
-    border-top: 1px solid var(--text-light>
-    
-    );
+    border-top: 1px solid var(--text-light );
 }
